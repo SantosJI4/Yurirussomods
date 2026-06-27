@@ -1,0 +1,9 @@
+# view AndroidManifest.xml #generated:35
+-keep class com.android.support.KeyActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:51
+-keep class com.android.support.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:55
+-keep class com.android.support.OverlayService { <init>(...); }
+
