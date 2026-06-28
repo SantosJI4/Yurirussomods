@@ -409,7 +409,7 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 // ── Player Hacks (v49) ──────────────────────────────────────────────────────
 // NickName — Player::get_NickName() — string IL2CPP do nome do player
 // Dump L651414: public System.String get_NickName() // 0x676CDF0
-#define OFF_get_NickName              0x86DE330
+#define OFF_get_NickName              0x7B0F960
 // get_IsAmmoFree — PlayerAttributes::get_IsAmmoFree() — true = infinito
 // Dump L714448: public System.Boolean get_IsAmmoFree() // 0x7261D18
 #define OFF_get_IsAmmoFree            0x7B51220
