@@ -317,7 +317,7 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 // OFFSETS DO DUMP (Free Fire v12 — il2cppdumper RVA)
 // Atualizar quando o jogo atualizar
 // ============================================================
-#define OFF_LateUpdate              0x6C0CFB8 //
+#define OFF_LateUpdate              0x7006224//
 #define OFF_Camera_get_main         0xA6AF630 //
 #define OFF_WorldToScreenPoint      0xA6AF2B4 //
 #define OFF_get_worldToCameraMatrix 0xA6AECD8 //
