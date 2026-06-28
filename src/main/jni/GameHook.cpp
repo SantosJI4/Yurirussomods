@@ -389,7 +389,7 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 // Dump L651569: public System.Void SetAimRotation(Quaternion, bool) // 0x67718B8
 #define OFF_SetAimRotation          0x6FB20C0
 // m_CurrentAimRotation @ 0x1834 — Quaternion atual (para smooth/slerp)
-#define OFF_m_CurrentAimRotation    0x1834
+#define OFF_m_CurrentAimRotation    0x198C
 // Wall check — AttackableEntity::IsVisible() — game-native visibility query
 // Dump L645952: public virtual System.Boolean IsVisible() // 0x68C83F8
 // Player herda de AttackableEntity e NAO faz override → chamar direto por offset é correto.
@@ -404,7 +404,7 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 // Camera Controller — CameraControllerBase::LateUpdate
 // Hookeado para aplicar aimbot/anti-recoil DEPOIS que o controlador posiciona a câmera.
 // Offset é o RVA do código da função (como OFF_LateUpdate).
-#define OFF_CameraController_LateUpdate 0x68FCE30
+#define OFF_CameraController_LateUpdate 0x7142C8C
 
 // ── Player Hacks (v49) ──────────────────────────────────────────────────────
 // NickName — Player::get_NickName() — string IL2CPP do nome do player
@@ -424,34 +424,33 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 #define OFF_IsMoving                  0x676650C
 // get_CanMedkitOnMove — Player — true = pode usar medkit andando (função principal)
 // Dump L653473: public System.Boolean get_CanMedkitOnMove(); // 0x6766680
-#define OFF_get_CanMedkitOnMove       0x6766680
+#define OFF_get_CanMedkitOnMove       0x6FA6AA0
 // CancelPreparation — Player — cancela o uso de item em andamento (medkit/item)
 // Hook: quando medkitRunEnabled, ignoramos o cancelamento para manter o medkit ativo.
 // Dump L652441: public System.Void CancelPreparation(); // 0x6805AC8
-#define OFF_CancelPreparation         0x6805AC8
+#define OFF_CancelPreparation         0x705045C
 // get_EatSpeedScale — PlayerAttributes — multiplicador de velocidade de uso de itens
 // Dump L714414: public System.Single get_EatSpeedScale(); // 0x7261068
-#define OFF_get_EatSpeedScale         0x7261068
+#define OFF_get_EatSpeedScale         0x7B50570
 
 // ── Anti-recoil adicional (v55) ─────────────────────────────────────────────
 // get_SkillScatterRate — PlayerAttributes — scatter adicional de habilidade
 // Dump L714455: public float get_SkillScatterRate() // 0x7261DE4
-#define OFF_get_SkillScatterRate      0x7261DE4
+#define OFF_get_SkillScatterRate      0x7B512EC
 // get_SkillScatterRateSighting — PlayerAttributes — scatter extra durante ADS de habilidade
 // Dump L714457: public float get_SkillScatterRateSighting() // 0x7261E98
-#define OFF_get_SkillScatterRateSighting 0x7261E98
+#define OFF_get_SkillScatterRateSighting 0x7B513A0
 
 // ── Auto Aim (v59-fix4) — SyncStartFire via PlayerNetwork ──────────────────
 // PlayerNetwork::SwapWeapon override — chamado SEMPRE (via vtable) ao trocar arma
 // Dump L661975: public override System.Void SwapWeapon(int,bool,List) // 0x6A30774
-#define OFF_SwapWeapon_PlayerNetwork  0x6A30774
+#define OFF_SwapWeapon_PlayerNetwork  0x7269758
 // PlayerNetwork::SyncStartFire(byte) — sincroniza disparo com o servidor
 // Dump L661892: public virtual System.Void SyncStartFire(byte) // 0x6A1F670
-#define OFF_SyncStartFire             0x6A1F670
+#define OFF_SyncStartFire             0x725705C
 // PlayerNetwork::SyncStopFire() — para o disparo
 // Dump L661898: public virtual System.Void SyncStopFire() // 0x6A21304
-#define OFF_SyncStopFire              0x6A21304
-
+#define OFF_SyncStopFire              0x7258CE0
 // ============================================================
 // Function Pointers — resolvidos via base + offset direto
 // ============================================================
