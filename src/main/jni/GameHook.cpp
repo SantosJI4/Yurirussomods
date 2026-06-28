@@ -340,7 +340,7 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 // HumanBodyBones.Head = 10
 // Player layout: offset 0x700 = NewPlayerAnimationSystemComponent*
 // NewPlayerAnimationSystemComponent base (GCommon.AnimationSystemComponent): offset 0x28 = Animator*
-#define OFF_Animator_GetBoneTransform 0x9BEE970
+#define OFF_Animator_GetBoneTransform 0xA696234
 #define PLAYER_ANIM_COMPONENT_OFFSET  0x700  // campo HFKJCLHCBGB na classe Player (dump L650012)
 #define ANIM_COMPONENT_ANIMATOR_OFFSET 0x20   // campo KFGPIOMOLHI (Animator) na base GCommon.AnimationSystemComponent (dump L644587/644603)
 #define HUMAN_BODY_BONE_HEAD           10    // UnityEngine.HumanBodyBones.Head
@@ -365,7 +365,7 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 #define OFF_get_HeadCollider               0x676FEB4
 // get_bounds() retorna Bounds (24 bytes) via SRET x8 — ABI incorreta para ponteiro direto.
 // get_bounds_Injected(out Bounds& ret) recebe o ponteiro em x1 como parâmetro normal → correto.
-#define OFF_Collider_get_bounds_Injected  0x9CB794C
+#define OFF_Collider_get_bounds_Injected 0xA6B06A8
 
 // (offsets GetPartByCollider e IsHeadShotCheck removidos em v31 — server-side validates)
 
@@ -393,7 +393,7 @@ static uintptr_t resolveElfSymbol(uintptr_t loadBase, const char *symName) {
 // Wall check — AttackableEntity::IsVisible() — game-native visibility query
 // Dump L645952: public virtual System.Boolean IsVisible() // 0x68C83F8
 // Player herda de AttackableEntity e NAO faz override → chamar direto por offset é correto.
-#define OFF_IsVisible               0x6F6E0D4
+#define OFF_IsVisible              0x6F6E0D4
 // ADS check — Player::get_IsSighting() — true quando o player está mirando (ADS)
 // Dump L653775: public System.Boolean get_IsSighting() // 0x676689C
 #define OFF_get_IsSighting          0x6FA6CBC
